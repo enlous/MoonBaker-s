@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+                  <div class="card-body">
+
+
+                    <form method="post" action="{% url 'updatePage' dataid=data.id %}" class="forms-sample" enctype="multipart/form-data">
+                    {% csrf_token %}
+                     <h2> Edit Here..</h2><br>
+                      <div class="form-group">
+                        <label for="exampleInputName1">Name:</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="Name" value="{{data.Name}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Email Id:</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Email" name="Email" value="{{data.Email}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4"> Mobile:</label>
+                        <input type="text" class="form-control" id="exampleInputPassword4" placeholder="mobile" name=" Number " value="{{data.Number}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3"> User Name:</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="UserName" name="UserName" value="{{data.UserName}}">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Password</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Password" name="Password" value="{{data.Password}}">
+                      </div>
+
+                      <div>
+                          <img src="{{data.Image.url}}">
+                        <input type="file" name="Image"><br><br>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                     </form>
+                  </div>
+                </div>
+
+</body>
+
+</html>
+{% endblock  %}

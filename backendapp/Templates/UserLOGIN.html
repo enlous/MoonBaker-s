@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+ <div>
+        <form method="post" action="{% url 'adminlogin' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="login">
+                <center>
+                <label for=""> USERNAME :</label> <br><br>
+            <input type="text" placeholder="User Name" name="username"> <br><br>
+            <label for=""> PASSWORD :</label> <br><br>
+            <input type="password" placeholder="Password" name="password"> <br><br>
+            <button type="Submit">Okay</button>
+            </center>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+<style>
+    .login{
+    background-color: #F2F2FF;
+    width: 350px;
+    height: 200px;
+    margin-top: 100px;
+    margin-left: 500px;
+    padding-top:20px;
+
+
+}
+
+
+</style>
+
+</html>
